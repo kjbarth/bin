@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Note that this will launch the "Activity Monitor" application if it is not
+# already running!  
+
+osascript -e 'tell application "Activity Monitor" to activate
+  tell application "System Events"
+  keystroke "2" using command down
+end tell'
+
+#printf "\n\nPausing before reactivating Terminal; Has the screen blinked yet?  \n\n"
+#read ans
+
+osascript -e 'tell application "Terminal" to activate'
+
+
