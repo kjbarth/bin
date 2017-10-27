@@ -1,5 +1,5 @@
 # bin
-A collection of my standard user's bin/ directory (usually small helpful bash and/or perl programs)
+A collection of my standard UNIX user's ~bin directory (small helpful bash and/or perl programs)
 
 Also, I was using this as a test so that I could get to know git and github.  
 
