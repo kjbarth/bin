@@ -1,16 +1,30 @@
 #!/bin/bash
 
-# Note that this will launch the "Activity Monitor" application if it is not
-# already running!  
+#
+# Note that this script will launch the "Activity Monitor" application if it is not
+# already running...
+#
 
+#
+# Below we use the osascript utility to ask the Activity Monitor application to
+# show the CPU performance graph-window:
+#
 osascript -e 'tell application "Activity Monitor" to activate
   tell application "System Events"
   keystroke "2" using command down
 end tell'
 
+#
+# Below used in some debugging I was doing related to timing of running this program.
+#
 #printf "\n\nPausing before reactivating Terminal; Has the screen blinked yet?  \n\n"
 #read ans
 
-osascript -e 'tell application "Terminal" to activate'
-
+#
+# OK, reactivate terminal, if and only if this program is being run
+# interactively (that is, stdin is is open and is associated with a terminal):
+#
+if [[ -t 0 ]] ; then
+  osascript -e 'tell application "Terminal" to activate'
+fi
 
