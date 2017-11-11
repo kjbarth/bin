@@ -22,7 +22,18 @@ stderrLogFile="${logDir}/${myProg}_stderr_${ts}"
 #
    sourceDir="/Users/./kjb"
    destDir=""                  # Not an error here, this way it works properly... (or at least, "as designed")
-targetSystem="rk-imac.local"
+targetSystem="RK-iMac.local"
+# 
+# There is some strange problem whereby the rk-imac.local is being resolved to
+# IP address 169.254.155.27 which is NOT the IP address on the en0 interface on
+# my RK-iMac desktop!  That address is on bridge0 interface, which I believe
+# has something to do wit the VMware Fusion product that I have installed.  So
+# I guess that the DNS has got this cached.  Well, eventhough this the way I
+# want it, it appears that I can get to the RK-iMac system via the "internal IP
+# address" that starts with 169.254!!!  
+#
+# So I am goint back to leaving this to be resolved as before, via DNS services:
+#targetSystem="192.168.1.67"
 
 #
 # First let us make sure we can reach the target:
